@@ -812,6 +812,11 @@ where
             model: model.to_string(),
         }
     }
+
+    /// Use the Responses API instead of Completions.
+    pub fn responses_api(self) -> crate::providers::openai::responses_api::ResponsesCompletionModel<T> {
+        crate::providers::openai::responses_api::ResponsesCompletionModel::new(self.client, &self.model)
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]

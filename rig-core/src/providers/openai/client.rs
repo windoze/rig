@@ -212,7 +212,7 @@ where
     /// let gpt4 = openai.completion_model(openai::GPT_4);
     /// ```
     fn completion_model(&self, model: &str) -> Self::CompletionModel {
-        super::responses_api::ResponsesCompletionModel::new(self.clone(), model)
+        super::completion::CompletionModel::new(self.clone(), model)
     }
 }
 
